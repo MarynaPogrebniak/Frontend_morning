@@ -1,0 +1,51 @@
+body {
+  /* цвет фона */
+  background-color: aquamarine;
+  /* шрифт */
+  font-size: 32px;
+  /* цвет букв */
+  color: blue;
+  /* внешние отступы */
+  margin: 0;
+}
+
+.outer1 {
+  height: 200px;
+  background-color: yellow;
+  /* padding-top: 25px; */
+  /* padding-right: 25px; */
+  /* padding-left: 25px; */
+  /* padding-bottom: 25px; */
+
+  /* все 4 стороны */
+  /* padding: 25px;  */
+
+  /* сверху снизу и слева справа */
+  /* padding: 25 px 25 px;  */
+
+  /* сверху + слева справа + снизу*/
+  /* padding: 25 px 25 px 25px;  */
+
+  /* сверху + справа + снизу + слева*/
+  padding: 20px 25px 30px 5px;
+
+  /* как и с padding */
+  margin: 0 auto 15px;
+  width: 90%;
+  border-top: 3px solid black;
+}
+
+.outer2 {
+  height: 200px;
+  background-color: darkmagenta;
+  margin-top: 20px;
+}
+
+.inner1 {
+  height: 100px;
+  background-color: darkolivegreen;
+  color: cornflowerblue;
+  /* width по отношению к Outer1 */
+  width: 80%;
+  margin: 13px auto 0;
+}

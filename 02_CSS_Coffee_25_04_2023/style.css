@@ -1,0 +1,16 @@
+body{
+    background-color: bisque;
+}
+
+.header{
+    height: 400px;
+    background-image: url('./images/Image20230425120051.jpg');
+    background-position: center;
+    /* не повторяет картинку, если коробка больше */
+    background-repeat: no-repeat;
+}
+
+h1{
+    font-size: 100px;
+    text-align: center;
+}
