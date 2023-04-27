@@ -1,16 +1,78 @@
-body{
-    background-color: bisque;
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Raleway:ital,wght@0,100;0,500;0,600;0,800;1,500;1,600;1,800&display=swap");
+
+/* настройка ко всему проекту */
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.header{
-    height: 400px;
-    background-image: url('./images/Image20230425120051.jpg');
-    background-position: center;
-    /* не повторяет картинку, если коробка больше */
-    background-repeat: no-repeat;
+body {
+  background-color: bisque;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-style: italic;
 }
 
-h1{
-    font-size: 100px;
-    text-align: center;
+.header {
+  height: 400px;
+  background-image: url("./images/Image20230425120051.jpg");
+  background-position: center;
+  /* не повторяет картинку, если коробка больше */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 100px;
+  text-align: center;
+  font-family: "Covered By Your Grace", cursive;
+  font-style: normal;
+  color: rgb(61, 31, 10, 0.8);
+  padding-top: 132px;
+}
+
+.main {
+  position: relative;
+}
+
+.left,
+.right {
+  position: absolute;
+  width: 48%;
+  top: 15px;
+}
+
+.left {
+  left: 15px;
+}
+
+.right {
+  right: 15px;
+}
+
+/* настрой дивы кот вложены в left и right */
+
+.left > div,
+.right > div {
+  margin: 100px 0;
+  border-bottom: 1px solid #e4bb97;
+  padding-bottom: 60px;
+  height: 150px;
+  /* прокрутка, если контент не помещается */
+  overflow-y: auto;
+}
+
+/* все p в div, которые в main */
+
+.main div > p {
+    /* выровнять текст по краям */
+    text-align: justify;
+    /* #454 = #454454 */
+    color: #454;
+    padding: 0 5px;
+    /* межстрочеый интервал */
+    line-height: 1.5px;
+    /* отступ в начале абзаца */
+    text-indent: 30px;
+    font-weight: 500;
 }
