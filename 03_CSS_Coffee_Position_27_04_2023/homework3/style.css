@@ -26,38 +26,37 @@ h1 {
   font-style: normal;
   font-family: "Covered By Your Grace", cursive;
   font-size: 100px;
-  text-align: center;  
+  text-align: center;
   color: rgb(61, 31, 10, 0.8);
   padding-top: 132px;
 }
 
 .main {
-  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 20px;
 }
 
 .left,
+.center,
 .right {
-  position: absolute;
-  width: 48%;
-  top: 15px;
+  width: 31%;
+  margin: 18px;
 }
 
-.left {
-  left: 15px;
+.left, .center, .right {
+  float:left;
+  min-height: 100%;
 }
-
-.right {
-  right: 15px;
-}
-
 /* настрой дивы кот вложены в left и right */
 
 .left > div,
-.right > div {
+.right > div,
+.center > div {
   margin: 100px 0;
   border-bottom: 1px solid #e4bb97;
-  padding-bottom: 60px;
-  height: 150px;
+  padding-bottom: 30px;
+  height: 200px;
   /* прокрутка, если контент не помещается */
   overflow-y: auto;
 }
@@ -65,14 +64,14 @@ h1 {
 /* все p в div, которые в main */
 
 .main div > p {
-    /* выровнять текст по краям */
-    text-align: justify;
-    /* #454 = #454454 */
-    color: #454;
-    padding: 0 5px;
-    /* межстрочеый интервал */
-    line-height: 1.5;
-    /* отступ в начале абзаца */
-    text-indent: 30px;
-    font-weight: 500;
+  /* выровнять текст по краям */
+  text-align: justify;
+  /* #454 = #454454 */
+  color: #454;
+  padding: 0 5px;
+  /* межстрочеый интервал */
+  line-height: 1.5;
+  /* отступ в начале абзаца */
+  text-indent: 30px;
+  font-weight: 500;
 }
