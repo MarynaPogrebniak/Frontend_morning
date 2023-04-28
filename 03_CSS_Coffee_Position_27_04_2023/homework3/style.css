@@ -32,23 +32,26 @@ h1 {
 }
 
 .main {
-  width: 100%;
-  height: 100%;
-  margin: 20px;
+ position: relative;
 }
 
 .left,
 .center,
 .right {
-  width: 31%;
-  margin: 18px;
+ position: absolute;
+ width: 31%;
+ top: 15%;
+}
+.left {
+  left: 15px;
+}
+.center {
+left: 34.5%;
 }
 
-.left, .center, .right {
-  float:left;
-  min-height: 100%;
+.right {
+  right: 15px;
 }
-/* настрой дивы кот вложены в left и right */
 
 .left > div,
 .right > div,
