@@ -1,0 +1,51 @@
+.flex-container {
+  /* w900+h450*/
+  /* bc:pink */
+  width: 900px;
+  height: 450px;
+  background-color: pink;
+  margin: 0 auto;
+  /* df - display flex */
+  display: flex;
+  /* элементы располагаются в соответствии со своим размером
+  пока помещаются. Если нет - на новую строку перенос*/
+  flex-wrap: wrap;
+  /* располагаются в колонку */
+  /* flex-direction: column; */
+  /* одинаковое расстояние между краями и элементами */
+  justify-content: space-evenly;
+  /* элементы выравниваются по верхнему краю (при расположении в строку) или по левому краю (при расположении в столбик) flex-контейнера */
+  align-items: flex-start;
+  /*  */
+  align-content: space-evenly;
+}
+
+.item {
+  height: 150px;
+  width: 250px;
+  background-color: blue;
+  /* em - размер самого себя. 3em - в 3р больше себя */
+  font-size: 3em;
+  /* tac - text-allign center */
+  text-align: center;
+  color: yellow;
+  /* alt стрелка вниз - строка переместится вниз */
+}
+
+.small {
+  height: 100px;
+  font-size: 2em;
+  color: black;
+  /* можно было б 5, так как элементов 5. последнее самое большое значение*/
+  order: 30;
+  /* расположение элемента по строке или колонке относительно базовой линии */
+  align-self: flex-end;
+}
+
+.large {
+  height: 200px;
+  font-size: 5em;
+  color: red;
+  /* порядок, в каком они располагаются. 20 просто предпоследнее значение будет*/
+  order: 20;
+}

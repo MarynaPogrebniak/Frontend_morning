@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-image: url("./images/Image20230428121435.jpg");
+  color: #eedb00;
+  /* чтоб картинка не прокручивалась */
+  background-attachment: fixed;
+}
+
+header {
+  background-color: rgba(60, 69, 67, 0.6);
+  border-radius: 15px 15px 0 0;
+}
+
+/* дочерние элементы нав */
+nav > ul {
+  /* убрать точки из списка */
+  list-style: none;
+  padding: 0;
+  /* при прокрутке остаются видны всегда */
+  position: fixed;
+  top: 5px;
+  left: 40px;
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+}
