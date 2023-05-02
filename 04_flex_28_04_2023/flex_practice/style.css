@@ -1,8 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poller+One&display=swap");
+
+/* для всего проекта */
 * {
   margin: 0;
 }
 
 body {
+  font-family: "Poller One", cursive;
   background-image: url("./images/Image20230428121435.jpg");
   color: #eedb00;
   /* чтоб картинка не прокручивалась */
@@ -14,7 +18,14 @@ header {
   border-radius: 15px 15px 0 0;
 }
 
-/* дочерние элементы нав */
+footer {
+  background-color: rgba(60, 69, 67, .6);
+  border-radius: 5px;
+height: 6em;
+  position: relative;
+}
+
+/* дочерние элементы nav */
 nav > ul {
   /* убрать точки из списка */
   list-style: none;
@@ -29,4 +40,87 @@ nav > ul {
 h1 {
   text-align: center;
   font-size: 2em;
+  padding: 0.5em 0;
 }
+
+.left {
+  float: left;
+  width: 25%;
+  margin: 5px 10px 0 5px;
+}
+
+.right {
+  float: right;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  float: right;
+  width: 50%;
+  margin: 5px 5px 0;
+  border: 2px solid yellow;
+  border-radius: 0 0 15px 15px;
+}
+
+.right h2 {
+  text-align: center;
+  width: 100%;
+}
+
+.right img {
+  width: 32%;
+}
+
+.bottomLeft {
+  border-bottom-left-radius: 15px;
+}
+
+.bottomRight {
+  border-bottom-right-radius: 15px;
+}
+
+.farGalaxy {
+  font-size: 2em;
+/* расстояние между буквами */
+letter-spacing: .2em;
+/* растянет текст к левому и правому краю */
+text-align: justify;
+/* интервал между строками */
+line-height: 1.5;
+}
+
+.left img {
+  /* тень, которая падает от элемента.
+   1. Цвет тени
+   2. насколько px идет вправо тень. если влево, то с минусом
+   3. по вертикали тень. положите значение вниз. отриц вверх */
+  box-shadow: rgba(60, 69, 67, .6) 10px 10px;
+}
+
+.button {
+  width: 11em;
+  height: 2em;
+  position: absolute;
+  top: 2em;
+  left: 22em;
+}
+
+.button > p {
+font-size: .8em;
+text-align: center;
+}
+
+.email {
+  color: black;
+  font-size: 1.5em;
+  /* буквы CapsLock делает */
+  font-variant: small-caps;
+}
+
+.commonButton {
+  border: 2px solid black;
+  border-radius: 5px;
+  border-color: rgba(204, 3, 35, 0.7);
+  /* при наведении курсор на кнопке меняктся */
+  cursor: pointer;
+}
+
