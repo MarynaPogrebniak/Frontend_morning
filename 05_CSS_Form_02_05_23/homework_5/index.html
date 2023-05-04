@@ -9,11 +9,13 @@
   </head>
   <body>
     <h1>Форма регистрации</h1>
-    <form>
-      <label for="name">Имя: </label>
+    <!-- адрес, куда после заполнения формы -->
+    <!-- method post, когда мы что-то отправляем на сервер -->
+    <form action="/submit" method="post">
+      <label for="name">Имя:<span>* </span></label>
       <input type="text" id="name" placeholder="Введите Ваше имя" required />
 
-      <label for="surname">Фамилия: </label>
+      <label for="surname">Фамилия:<span>* </span></label>
       <input
         type="text"
         id="surname"
@@ -24,16 +26,38 @@
       <label for="date">Дата рождения: </label>
       <input type="date" id="date" />
 
-      <label for="phone">Номер телефона: </label>
-      <input type="tel" id="phone" placeholder="Введите Ваш номер телефона" />
+      <label for="phone">Номер телефона:<span>* </span></label>
+      <!-- pattern формат. 
+        0-9 числа от 0 до 9. {3} - количество чисел, потом - -->
+      <input
+        type="tel"
+        id="phone"
+        placeholder="Номер телефон в формате 000-000-0000"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        required
+      />
 
       <label for="adres">Адрес: </label>
       <input type="text" id="adres" placeholder="Введите Ваш адрес" />
 
-      <label for="email">E-mail: </label>
-      <input type="email" id="email" placeholder="Введите Ваш e-mail" />
+      <label for="email">E-mail:<span>* </span></label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Введите Ваш e-mail"
+        required
+      />
 
-      <label for="password">Пароль: </label>
+      <label for="newsletter">Хотите подписаться на наши новости?</label>
+      <input type="checkbox" id="newsletter" />
+
+      <label for="bio">Расскажите о себе: </label>
+      <textarea name="bio" id="bio" rows="7"></textarea>
+
+      <label for="avatar">Загрузить фото: :</label>
+      <input type="file" id="avatar" name="avatar">
+
+      <label for="password">Пароль:<span>* </span></label>
       <input
         type="password"
         id="password"
@@ -41,7 +65,7 @@
         required
       />
 
-      <label for="confirm-pass">Пароль: </label>
+      <label for="confirm-pass">Пароль:<span>* </span></label>
       <input
         type="password"
         id="confirm-pass"

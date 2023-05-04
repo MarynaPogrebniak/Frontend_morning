@@ -55,3 +55,7 @@ input {
 #reset {
   padding-left: 18px;
 }
+
+span {
+    color: red;
+}
