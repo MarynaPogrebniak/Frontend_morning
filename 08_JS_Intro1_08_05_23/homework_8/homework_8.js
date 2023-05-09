@@ -1,5 +1,5 @@
 // 1 задача
-
+//test git
 let res = sumDigits(12345);
 //10. 1+ 2 + 3 + 4
 console.log(`res sumDigits = ${res}`); //res = 10;
