@@ -15,7 +15,36 @@ let inputDate = prompt('Enter book data separate by ";"');
 
 while (inputDate) {
   
+  // let count = 0;
+  // for (let i = 0; i < inputDate.length; i++) {
+  //   if (inputDate[i] === ';') {
+  //     count++;
+  //   } 
+  //   if (count > 3) {
+  //     console.log('Date is not valid');
+  //     return;
+  //   }
+  // }
+  // if (count !==3) {
+  //   return;
+  // }
+
+  // const arr = inputDate.split(";");
+    // if (arr.length!==4) {
+    //   return;
+    // }
+    // if (arr.length === 4 &&
+    // arr[0] && 
+    // arr[1] !== '' &&
+    // arr[2] !== '' && 
+    // arr[3] !== '' &&
+    // findBook(library, arr[0]) === -1) {
+    //   const book = new Book (arr[0], arr[1], arr[2], arr[3]);
+    //   library.push(book);
+    // }
+
   const [isbn, title, author, year] = inputDate.split(";");
+    
   const book = new Book(isbn, title, author, year);
 
   let isBookExists = false;
