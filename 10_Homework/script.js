@@ -27,6 +27,14 @@ const bankAccount = {
   },
 };
 
+let res = Object.keys(bankAccount);
+console.log(res);
+const [number, holderName, balance] = Object.values(bankAccount);
+console.log(number, holderName, balance);
+res = Object.entries(bankAccount);
+console.log(res);
+
+
 console.log(bankAccount.checkBalance(bankAccount.balance));
 console.log(bankAccount.deposit(6600));
 console.log(bankAccount.withdrawalMoney(400));
