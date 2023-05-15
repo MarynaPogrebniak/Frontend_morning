@@ -1,29 +1,48 @@
 .container {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.counter{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
-.counter button {
-    font-size: 24px; /*1.5 rem */
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+button {
+  font-size: 24px; /*1.5 rem */
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .counter span {
-    font-size: 32px;
-    padding: 0 20px;
+  font-size: 28px;
+  padding: 0 20px;
 }
 
- /* при наведении мышкой изменяется*/
+/* после : псевдокласс */
+/* при наведении мышкой изменяется*/
 .counter button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
+  font-size: 32px;
+  transform: scale(1.05);
+}
+
+/* посещенная страница*/
+a:visited {
+  color: pink;
+}
+
+/* когда нажал мышкой и держишь */
+a:active {
+  color: red;
+}
+
+#reset {
+  margin: 15px 0;
 }
