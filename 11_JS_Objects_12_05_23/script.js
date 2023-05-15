@@ -36,7 +36,9 @@ const shoppingCart = {
     if (existingItem) {
       existingItem.quantity += item.quantity;
     } else {
-      this.items.push(item);
+      if(item.name && item.price && item.quantity){
+        this.items.push(item);
+      }
     }
     this.updateTotalCost();
   },
@@ -61,8 +63,16 @@ const shoppingCart = {
 // shoppingCart.removeItem('Beef');
 // console.log(totalCost);
 
+// const add = document.getElementById('add');
+
 add.onclick = addHandler;
 stats.onclick = statsHandler;
+
+// add.addEventListener('click', addHandler);
+// add.addEventListener('keydown', (e) => {
+//   console.log(e);
+// });
+
 const h = document.createElement("h2");
 function addHandler() {
   shoppingCart.addItem({
@@ -77,7 +87,7 @@ function addHandler() {
 
   shoppingCart.items.forEach((e) => {
     const li = document.createElement("li");
-    li.textContent = `Products name: ${e.name}, Product price: ${e.price}, quantity of products: ${e.quantity}`;
+    li.innerHTML = `<b>Products name:</b><span style="color:black;">${e.name}</span>, <b>Product price:</b> ${e.price}, <b>quantity of products:</b> ${e.quantity}`;
     productsList.append(li);
     return;
   });
@@ -107,7 +117,7 @@ function statsHandler() {
       0
     );
     const totalPrice = shoppingCart.items.reduce(
-      (total, el) => total + el.price,
+      (total, el) => total + el.price * el.quantity,
       0
     );
     const itemsQuantity = shoppingCart.items.length;
