@@ -37,6 +37,7 @@ function addTask() {
     li.innerHTML = `<span>${taskName}</span><button>Delete</button><button>Done</button>`;
     taskListUl.appendChild(li);
   }
+  
   task.value = "";
 }
 

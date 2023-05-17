@@ -39,7 +39,11 @@ li > button {
 }
 
 #taskList {
-  border: 1px solid #007bff;
+  /* border: 1px solid #007bff; */
   width: fit-content;
   padding: 20px 40px 15px 55px;
+}
+
+#taskList:has(li) {
+  border: 1px solid #007bff;
 }
