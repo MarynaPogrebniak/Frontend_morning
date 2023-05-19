@@ -70,12 +70,3 @@ function displayUserDetails(user) {
   userDetailsDiv.append(nameHeading, nickName, email, phone, website);
 }
 "Hello world".includes("llo"); // true, ищет в строке совпадения на подстроку
-
-
-function latePrint (word) {
-    setTimeout(() => {
-        console.log(word)
-    }, 9000);
-}
-
-latePrint('слово');
