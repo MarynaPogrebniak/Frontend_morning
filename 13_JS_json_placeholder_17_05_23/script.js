@@ -17,6 +17,9 @@ const userList2 = document.getElementById("userList2");
 const userDetailsDiv = document.getElementById("userDetails");
 const searchInput = document.getElementById("searchInput");
 let users = [];
+userList.classList.add('userList');
+userList2.classList.add('userList2');
+
 
 fetch(url)
   .then((res) => res.json())
@@ -67,5 +70,6 @@ function displayUserDetails(user) {
   website.innerHTML = `<strong>Website: </strong> ${user.website}`;
 
   userDetailsDiv.append(nameHeading, nickName, email, phone, website);
+  userDetailsDiv.classList.add('userDetailsDiv');
 }
 "Hello world".includes("llo"); // true, ищет в строке совпадения на подстроку
