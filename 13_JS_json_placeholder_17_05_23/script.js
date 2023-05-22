@@ -66,7 +66,6 @@ function displayUserDetails(user) {
   const website = document.createElement("p");
   website.innerHTML = `<strong>Website: </strong> ${user.website}`;
 
-
   userDetailsDiv.append(nameHeading, nickName, email, phone, website);
 }
 "Hello world".includes("llo"); // true, ищет в строке совпадения на подстроку
