@@ -39,17 +39,17 @@ fetch(url)
     console.log("Error fetching user", error);
   });
 
-function displayUsers(users) {
-  userList2.innerHTML = "";
-
-  users.forEach((user) => {
-    const li = document.createElement("li");
-    li.innerText = user.name;
-    li.style.cursor = "pointer"; 
-    li.addEventListener("click", () => displayUserDetails(user));
-    userList2.append(li);
-  });
-}
+  function displayUsers(users) {
+    userList2.innerHTML = "";
+    users.forEach((user) => {
+      const li2 = document.createElement("li");
+      li2.innerHTML = user.name;
+      li2.style.cursor = "pointer";
+      li2.addEventListener("click", () => displayUserDetails(user));
+      userList2.append(li2); 
+    });
+  }
+  
 
 function displayUserDetails(user) {
   userDetailsDiv.innerHTML = "";
