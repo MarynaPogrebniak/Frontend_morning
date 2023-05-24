@@ -8,7 +8,8 @@ let users = [];
 userList.classList.add("userList");
 userList2.classList.add("userList2");
 
-async function fetchUsersOriginal() {
+// вариант вызова ф. Взять в скобки функцию. И после функции ();
+(async function fetchUsersOriginal() {
   try {
     const response = await fetch(baseUrl);
     users = await response.json();
@@ -24,9 +25,9 @@ async function fetchUsersOriginal() {
   } catch (error) {
     console.log("Error fetching users: ", error);
   }
-}
+}) ();
 
-fetchUsersOriginal();
+// fetchUsersOriginal();
 
 async function fetchUsers() {
   try {
