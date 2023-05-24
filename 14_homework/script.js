@@ -18,11 +18,14 @@ async function fetchUsersOriginal() {
       li.innerText = user.name;
       userList.append(li);
     });
+
     return users;
+
   } catch (error) {
     console.log("Error fetching users: ", error);
   }
 }
+
 fetchUsersOriginal();
 
 async function fetchUsers() {

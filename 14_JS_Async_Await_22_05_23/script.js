@@ -19,14 +19,14 @@ loadPostsBtn.addEventListener("click", async () => {
 });
 
 addPostBtn.addEventListener("click", async () => {
-    const postData = {
-        title: title.value,
-        body: body.value,
-        id: '' + new Date().getTime()
-    }
-    const posts = await createPost(postData);
-    // displayPosts(posts);
-  });
+  const postData = {
+    title: title.value,
+    body: body.value,
+    id: "" + new Date().getTime(),
+  };
+  const posts = await createPost(postData);
+  // displayPosts(posts);
+});
 
 async function fetchUsers() {
   try {
@@ -49,38 +49,38 @@ async function fetchPosts() {
 }
 
 async function createPost(postData) {
-    try {
-        const response = await fetch(`${baseUrl}posts`, {
-            method: 'POST',
-            body: JSON.stringify(postData)
-        });
-        const post = await response.json();
-        return post;
-    } catch (error) {
-        console.log("Error creating posts: ", error);
-    }
+  try {
+    const response = await fetch(`${baseUrl}posts`, {
+      method: "POST",
+      body: JSON.stringify(postData),
+    });
+    const post = await response.json();
+    return post;
+  } catch (error) {
+    console.log("Error creating posts: ", error);
+  }
 }
 
 async function handleAddPost() {
-    if (!title || !body) {
-        alert('Please enter something in fields title and body');
-        return;        
-    } 
+  if (!title || !body) {
+    alert("Please enter something in fields title and body");
+    return;
+  }
 
-    const postData = {
-        title: title.value,
-        body: body.value,
-        id: '' + new Date().getTime()
-    }
+  const postData = {
+    title: title.value,
+    body: body.value,
+    id: "" + new Date().getTime(),
+  };
 
-    const post = await createPost(postData);
-    if (post) {
-        title.value = '';
-        body.value = '';
-    }
+  const post = await createPost(postData);
+  if (post) {
+    title.value = "";
+    body.value = "";
+  }
 
-    const posts = await fetchPosts();
-    displayPosts(posts);
+  const posts = await fetchPosts();
+  displayPosts(posts);
 }
 
 function displayPosts(posts) {
