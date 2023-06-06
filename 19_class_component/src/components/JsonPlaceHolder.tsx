@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { ListFormat } from "typescript";
 
 const url = "https://jsonplaceholder.typicode.com/users";
 
