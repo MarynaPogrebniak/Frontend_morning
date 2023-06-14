@@ -5,11 +5,15 @@ interface CounterState {
 }
 
 const initialState: CounterState = {
-    count: 0
+    count: 0,
 };
 
 // reducer в качестве параметров принимает state и action
-const counterReducer = (state = initialState, action: CounterAction) => {
+// а возвращает всегда обновленный state
+const counterReducer = (
+    state = initialState,
+    action: CounterAction
+    ): CounterState => {
     switch (action.type) {
         case 'INCREMENT':
             return {
