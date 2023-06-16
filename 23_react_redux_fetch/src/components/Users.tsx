@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { DataState } from "../reducer/reducers";
 
-const RenderUsers = () => {
+const Users = () => {
  // const dispatch = useDispatch();
   const users = useSelector((state: { data: DataState }) => state.data.users);
 
@@ -18,4 +18,4 @@ const RenderUsers = () => {
   );
 };
 
-export default RenderUsers;
+export default Users;

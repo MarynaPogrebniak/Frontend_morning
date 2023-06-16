@@ -4,8 +4,8 @@ import DataFetcher from './components/DataFetcher';
 import { setComments, setPhotos, setPosts, setUsers } from './reducer/reducers';
 import Posts from './components/Posts';
 import Comments from './components/Comments';
-import RenderUsers from './components/RenderUsers';
 import Photos from './components/Photos';
+import Users from './components/Users';
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
       />
       <Posts />
       <Comments />
-      <RenderUsers />
+      <Users />
       <Photos />
     </div>
   );
