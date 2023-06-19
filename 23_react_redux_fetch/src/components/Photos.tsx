@@ -14,8 +14,14 @@ const Photos: React.FC = () => {
     (state: { data: DataState }) => state.data.photosPerPage
   );
 
+  // если на странице отображается по 10 фото и мы находимся на
+  // 51 странице, то indexOfLastElement 50. indexOfFirstElement 40
   const indexOfLastElement = currentPage * photosPerPage;
   const indexOfFirstElement = indexOfLastElement - photosPerPage;
+  
+  // из массива всех фото, полученных из глобального состояния
+  // сохраняем только фото, отображаемые на той одной странице фото,
+  // на которой мы находимся
   const currentPhotos = photos.slice(indexOfFirstElement, indexOfLastElement);
 
   const previousPage = () => {
