@@ -2,10 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectFilter } from "../redux/slices/filterSlice";
 import { useDispatch } from "react-redux";
-import { addToCart, selectCart, selectCartItemById } from "../redux/slices/cartSlice";
+import { addToCart, selectCartItemById } from "../redux/slices/cartSlice";
 import { selectItemsData, setItem } from "../redux/slices/itemsSlice";
 
-interface CardItem {
+export interface CardItem {
     id: string;
     images: string[];
     title: string;
@@ -19,14 +19,14 @@ interface CardItem {
 const Card: React.FC<CardItem> = ({
     id, title, images, info, price, rating, sizes, types
 }) => {
-    const counter = useSelector(selectCartItemById(+id));
+    const counter = useSelector(selectCartItemById(id));
     const count: number = counter && counter.count;
     const { activeSize, activeType } = useSelector(selectItemsData);
     const { categoryName } = useSelector(selectFilter);
     const isCategory = categoryName === 'Закрытые'
     const dispatch = useDispatch();
 
-    const cardItem: CardItem = {
+    const cardItem: any = {
         id, title, images, info, price, rating, sizes, types
     };
 
@@ -47,7 +47,7 @@ const Card: React.FC<CardItem> = ({
             </h2>
             <div>
                 <span>От {price} $</span>
-                 <button onClick={() => {/*dispatch(addToCart(cardItem))}*/}}> 
+                 <button onClick={() => dispatch(addToCart(cardItem))}> 
                     <span>+</span>
                     Добавить
                     { count && <span>{count}</span> }
