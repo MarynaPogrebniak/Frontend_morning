@@ -9,18 +9,17 @@ interface IParams {
 }
 
 export const fetchItems = createAsyncThunk(
-    'items/itemsFetchStatus',
+    "items/itemsFetchStatus",
     async (params: IParams) => {
         const { categoryId, sortingItem, searchValue, currentPage } = params;
         const res = await fetch(`
-        https://6442fcd190738aa7c069c92c.mockapi.io/items?${
-            categoryId > 0 ? `category=${categoryId}` : ""
+            https://6442fcd190738aa7c069c92c.mockapi.io/items?${
+                categoryId > 0 ? `category=${categoryId}` : ""
             }&sortBy=${sortingItem.sortProperty}&order=${sortingItem.order}${
-            searchValue ? `&search=${searchValue}` : ""
+                searchValue ? `&search=${searchValue}` : ""
             }&page=${currentPage || 1}&limit=8`
         );
         const data = await res.json();
-
         return data;
     }
 );
@@ -43,9 +42,8 @@ export const itemsSlice = createSlice({
         },
         setItem(state = initialState, action) {
             state.item = action.payload;
-            // localStorage инструмент от браузера, который позволяет
-            // хранить инфо в формате ключ значение для оптимизации 
-            // работы приложения
+            // localStorage - инструмент от браузера, который позволяет хранить информацию
+            // в формате ключ/значение для оптимизации работы приложения
             localStorage.setItem('item', JSON.stringify(action.payload));
         },
         setActiveType(state = initialState, action) {
@@ -56,26 +54,27 @@ export const itemsSlice = createSlice({
         }
     },
     extraReducers: {
-        // createAsyncThunk дает доступ к 3м сущностям для 
-        // детализации асинхронного запроса:
-        // 1. pending => когда асинхронный запрос в процессе
+        // createAsyncThunk даёт доступ к трём сущностям для детализации ассинхронного запроса:
+        // 1. Pending => когда ассинхронный запрос в процессе
         [fetchItems.pending.type]: (state) => {
             state.status = 'loading';
             state.items = [];
         },
-        // 2. fulfilled => когда асинхронный запрос выполнен успешно
+        // 2. Fulfilled => когда ассинхронный запрос выполнен успешно
         [fetchItems.fulfilled.type]: (state, action) => {
             state.status = 'success';
             state.items = action.payload;
         },
-        // 3. rejected => когда асинхронный запрос выполнен с ошибкой
-        [fetchItems.rejected.type]: (state, action) => {
+        // 3. Rejected => когда ассинхронный запрос выполнен с ошибкой
+        [fetchItems.rejected.type]: (state) => {
             state.status = 'error';
             state.items = [];
         }
     }
 });
 
-export const selectItemsData = (state = initialState) => state.items;
-export const {setItems, setItem, setActiveType, setActiveSize } = itemsSlice.actions;
+export const selectItemsData = (state: any) => state.items;
+
+export const { setItems, setItem, setActiveSize, setActiveType } = itemsSlice.actions;
+
 export default itemsSlice.reducer;

@@ -4,7 +4,6 @@ import filterReducer from "./slices/filterSlice";
 import searchReducer from "./slices/searchSlice";
 import itemsReducer from "./slices/itemsSlice";
 
-
 export default configureStore({
     reducer: {
         filter: filterReducer,

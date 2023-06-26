@@ -1,21 +1,18 @@
-import React from 'react'
+import React from "react";
 
 const Logo: React.FC = () => {
-  return (
-    <>
-    <div>
-        <img 
-        src=''
-        alt='Logo React Pizza'
-        />
+    return (
         <div>
-            <h1>React Pizza</h1>
-            <p>The best pizza is here!</p>
+            <img
+                src=""
+                alt="Логотип Реакт Пицца"
+            />
+            <div>
+                <h1>React Pizz</h1>
+                <p>Best pizza here!</p>
+            </div>
         </div>
-    </div>
-    </>
-    
-  );
+    );
 };
 
 export default Logo;

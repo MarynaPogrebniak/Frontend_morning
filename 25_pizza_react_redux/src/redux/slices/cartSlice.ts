@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface InterfaceItem {
     id: number;
@@ -8,8 +8,8 @@ interface InterfaceItem {
 }
 
 interface ICartState {
-    totalPrice: number,
-    items: InterfaceItem [],
+    totalPrice: number;
+    items: InterfaceItem[];
 }
 
 const initialState: ICartState = {
@@ -23,49 +23,49 @@ const cartSlice = createSlice({
     reducers: {
         addToCart(state = initialState, action: PayloadAction<InterfaceItem>) {
             const findItem = state.items.find((item: InterfaceItem) => item.id === action.payload.id);
-            if(findItem) {
+            if (findItem) {
                 findItem.count++;
             } else {
-                state.items.push ({...action.payload, count: 1});
-            }
+                state.items.push({...action.payload, count: 1});
+            };
             state.totalPrice = state.items.reduce(
-            (acc, item) => acc + item.price * item.count, 0
+                (acc, item) => acc + item.price * item.count, 0
             );
         },
         incrementCount(state = initialState, action: PayloadAction<number>) {
             const findItem = state.items.find((item: InterfaceItem) => item.id === action.payload);
-            if(findItem) {
+            if (findItem) {
                 findItem.count++;
             };
             state.totalPrice = state.items.reduce(
                 (acc, item) => acc + item.price * item.count, 0
-                );
+            );
         },
         decrementCount(state = initialState, action: PayloadAction<number>) {
             const findItem = state.items.find((item: InterfaceItem) => item.id === action.payload);
-            if(findItem && findItem.count >= 1) {
+            if (findItem && findItem.count >= 1) {
                 findItem.count--;
             };
             state.totalPrice = state.items.reduce(
                 (acc, item) => acc + item.price * item.count, 0
-                );
+            );
         },
-        
-        removeAllItems (state) {
+        removeAllItems(state) {
             state.items = [];
             state.totalPrice = 0;
-            },
-        removeItem (state, action: PayloadAction<number>) {
+        },
+        removeItem(state, action: PayloadAction<number>) {
             state.items = state.items.filter(item => item.id !== action.payload);
             state.totalPrice = state.items.reduce(
                 (acc, item) => acc + item.price * item.count, 0
-                );
-            },
-
+            );
+        }
     }
 });
 
 export const selectCart = (state = initialState) => state;
+
+export const selectCartItemById = (id: number) => (state: any) => state.cart.items.find((item: InterfaceItem) => item.id === id)
 
 export const {
     addToCart,

@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface ISortingItem {
     name: string;
@@ -8,7 +8,7 @@ export interface ISortingItem {
 
 interface IFilterState {
     categoryId: number;
-    categoryNames: string [];
+    categoryNames: string[];
     categoryName: string;
     sortingItem: ISortingItem;
     currentPage: number;
@@ -23,13 +23,13 @@ const initialState: IFilterState = {
         'Вегетарианские',
         'Гриль',
         'Острые',
-        'Закрытые',
+        'Закрытые'
     ],
 
     categoryName: 'Все',
 
     sortingItem: {
-        name: 'По популярности',
+        name: 'популярности',
         sortProperty: 'rating',
         order: 'desc'
     },
@@ -37,24 +37,25 @@ const initialState: IFilterState = {
     currentPage: 1
 }
 
-export const filterSlice = createSlice ({
+export const filterSlice = createSlice({
     name: 'filter',
     initialState,
     reducers: {
-
-        onClickCategory (state = initialState, action: PayloadAction<number>) {
+        onClickCategory(state = initialState, action: PayloadAction<number>) {
             state.categoryId = action.payload;
             state.categoryName = state.categoryNames[state.categoryId];
         },
-        onClickSort (state = initialState, action: PayloadAction<ISortingItem>) {
+        onClickSort(state = initialState, action: PayloadAction<ISortingItem>) {
             state.sortingItem = action.payload;
         },
         setCurrentPage(state = initialState, action: PayloadAction<number>) {
             state.currentPage = action.payload;
         }
     }
-
 });
 
+export const selectFilter = (state: any) => state.filter;
+
 export const { onClickCategory, onClickSort, setCurrentPage } = filterSlice.actions;
+
 export default filterSlice.reducer;
